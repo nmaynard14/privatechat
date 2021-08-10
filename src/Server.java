@@ -25,6 +25,12 @@ public class Server {
 
             in.read(buffer);
 
+            System.out.print("Echo: ");
+            for (int i = 0; buffer[i] != 0 && i < buffer.length; i++) {
+                System.out.print((char)(buffer[i] & 0xFF));
+            }
+            System.out.print("\n");
+
             out.write(buffer);
 
             client.close();

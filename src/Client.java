@@ -37,7 +37,15 @@ public class Client {
             in.read(buffer);
 
             String stringIn = new String(buffer);
-            System.out.println("\n" + stringIn);
+
+            for (int i = 0; i < stringIn.length(); i++) {
+                if (stringIn.charAt(i) == '\0') {
+                    stringIn = stringIn.substring(0,i);
+                    break;
+                }
+            }
+
+            System.out.println(stringIn);
         }
     }
 }
